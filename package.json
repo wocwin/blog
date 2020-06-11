@@ -1,0 +1,22 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "组件",
+  "main": "index.js",
+  "author": "win",
+  "license": "MIT",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
+  },
+  "dependencies": {
+    "element-ui": "^2.13.2",
+    "highlight.js": "^10.0.3",
+    "vue-highlight.js": "^3.1.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2"
+  }
+}
