@@ -7,7 +7,7 @@ module.exports = {
     },
     themeConfig: {
         // 你的GitHub仓库，请正确填写
-        repo: 'https://github.com/heye1109/blog',
+        repo: 'https://github.com/wocwin/my-vuePress',
         // 自定义仓库链接文字。
         repoLabel: 'GitHub',
         nav: [
