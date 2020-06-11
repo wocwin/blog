@@ -12,7 +12,7 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f https://github.com/heye1109/blog.git master:build-pages
+git push -f git@github.com:wocwin/my-vuePress.git master:build-pages
 
 
 cd -
