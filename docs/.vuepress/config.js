@@ -1,6 +1,8 @@
 module.exports = {
     title: 'BaseComponents',
     description: '基础组件简介',
+    port: 2222,
+    // dest: './dist',   // 设置输出目录
     head: [],
     markdown: {
         lineNumbers: true // 代码块显示行号
@@ -12,39 +14,16 @@ module.exports = {
         repoLabel: 'GitHub',
         nav: [
             { text: '主页', link: '/' },
-            { text: 'ns-UI', link: '/ns-ui/logs' },
-            { text: '开发规范', link: '/standard/html' }
+            { text: '组件', link: '/baseComponents/TTable/base.md' }
         ],
         sidebar: {
-            '/ns-ui': [
+            '/baseComponents/': [
                 {
-                    title: '开发指南',
-                    collapsable: false,
+                    title: 'table组件',
+                    collapsable: true,
                     children: [
-                        '../ns-ui/logs',
-                        '../ns-ui/guid',
-                        '../ns-ui/install',
-                        '../ns-ui/start'
-                    ]
-                },
-                {
-                    title: '组件',
-                    collapsable: false,
-                    children: [
-                        ['../ns-ui/searchSelect', 'SearchSelect 选择器']
-                    ]
-                }
-            ],
-            '/standard': [
-                {
-                    title: '前端开发规范',
-                    collapsable: false,
-                    children: [
-                        '../standard/html',
-                        '../standard/css',
-                        '../standard/js',
-                        '../standard/vue',
-                        '../standard/eslint'
+                        // ['TTable/base', 'Table组件基础用法']
+                        'TTable/base'
                     ]
                 }
             ]
