@@ -1,8 +1,8 @@
 <template>
   <div class="code">
     <div class="code--title">
-      <h2>{{title}}</h2>
-      <small>{{description}}</small>
+      <h2 v-if="title">{{title}}</h2>
+      <small v-if="description">{{description}}</small>
     </div>
     <div class="code--demo">
       <div class="code-content">
@@ -18,13 +18,25 @@
 
 <script>
 export default {
-  name: 'DemoPage',
-  props: ['title', 'description'],
+  name: 'CodeFormat',
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
       isShow: false,
       codeTextBtn: '显示代码'
     }
+  },
+  mounted () {
+    // console.log(333, this.$slots.codeText)
   },
   methods: {
     handleToggleShow () {
@@ -46,9 +58,9 @@ export default {
     }
 
     small {
-      font-size: 14px;
+      font-size: 16px;
       display: inline-block;
-      margin: 10px 0;
+      margin: 10px 0 20px 0;
       color: #5e6d82;
     }
   }
@@ -72,20 +84,23 @@ export default {
     font-weight: 400;
     line-height: 40px;
     text-align: center;
+    border: 1px solid #ebebeb;
     cursor: pointer;
     box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
       0 2px 4px 0 rgba(232, 237, 250, 0.5);
+    transition: all 1s;
     &:hover {
       font-size: 17px;
+      box-shadow: 0 0 4px 2px #ccc;
     }
   }
 
   & + .code {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   &:not(:first-child) {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }
 </style>
