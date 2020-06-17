@@ -1,7 +1,7 @@
 module.exports = {
     title: 'BaseComponents',
     description: '基础组件简介',
-    base: '/myVuePress/',
+    base: '/blog/',
     port: 2222,
     // dest: './dist',   // 设置输出目录
     head: [],
@@ -10,7 +10,7 @@ module.exports = {
     },
     themeConfig: {
         // 你的GitHub仓库，请正确填写
-        repo: 'https://github.com/wocwin/myVuePress',
+        repo: 'https://github.com/wocwin/blog',
         // 自定义仓库链接文字。
         repoLabel: 'GitHub',
         nav: [

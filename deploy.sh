@@ -12,10 +12,10 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:wocwin/my-vuePress.git master:build-pages
+git push -f https://github.com/wocwin/blog.git master:gh-pages
 
-git remote add origin git@github.com:wocwin/my-vuePress.git
-git push origin --delete build-pages
-git push origin master:build-pages
+# git remote add origin https://github.com/wocwin/myVuePress.git
+# git push origin --delete gh-pages
+# git push origin master:gh-pages
 
 cd -
