@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /hero.jpg      
+heroImage: /hero.jpg      
 actionText: 快速上手 →
 actionLink: /baseComponents/TTable/base
 features:

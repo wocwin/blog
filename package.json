@@ -11,11 +11,15 @@
     "deploy": "deploy.sh"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "element-ui": "^2.13.2",
+    "es6-promise": "^4.2.8",
     "highlight.js": "^10.0.3",
     "vue": "^2.6.10",
     "vue-clipboard2": "^0.3.1",
-    "vue-highlight.js": "^3.1.0"
+    "vue-highlight.js": "^3.1.0",
+    "vuepress-plugin-gotop-plus": "^1.0.4",
+    "xlsx": "^0.15.1"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",
