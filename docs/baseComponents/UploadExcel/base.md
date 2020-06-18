@@ -1,7 +1,7 @@
 # Excel导入组件
 ---
 
-<common-code-format description="在组件中需配置：属性visible是否显示弹窗；title：弹窗标题（默认：温馨提示）；@update:visible 右上删除或取消事件；新增v-dialogDrag指令可按头部拖拽弹窗；ElementUI中el-dialog的属性皆可用(如：close-on-click-modal属性——点击空白区域是否关闭弹窗)">
+<common-code-forma>
   <docsComponents-UploadExcel-index></docsComponents-UploadExcel-index>
   <highlight-code slot="codeText">
     <template>

@@ -1,6 +1,6 @@
 <template>
   <div class="excel-upload" style="width: 100%;">
-    <t-layout sectionTitle="Excel上传组件">
+    <t-layout sectionTitle="Excel批量导入组件">
       <step-wizard
         style="min-height:400px;"
         :stepData="stepData"
