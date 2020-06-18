@@ -13,8 +13,7 @@
         <div class="flex-box flex-ver fix-btn">
           <slot name="fixBtn"></slot>
         </div>
-        <div class="footer">
-         
+        <div class="footer">底部信息</div>
       </div>
     </div>
   </div>
@@ -52,11 +51,11 @@ export default {
       const fixBtnHeight = this.isShow('fixBtn') ? 40 : 0
       // 设置窗口的高度
       this.$refs.section.style.height = window.innerHeight - 83 + 'px'
-      this.$refs.layoutContent.children[0].style.minHeight = window.innerHeight - 206 - fixBtnHeight + 'px'
+      this.$refs.layoutContent.children[0].style.minHeight = window.innerHeight - 186 - fixBtnHeight + 'px'
       let that = this
       window.onresize = () => { // 重置窗口的高度
         that.$refs.section.style.height = window.innerHeight - 83 + 'px'
-        that.$refs.layoutContent.children[0].style.minHeight = window.innerHeight - 206 - fixBtnHeight + 'px'
+        that.$refs.layoutContent.children[0].style.minHeight = window.innerHeight - 186 - fixBtnHeight + 'px'
       }
       that.$on('hook:beforeDestroy', () => {
         window.onresize = null
