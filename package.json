@@ -6,8 +6,8 @@
   "author": "win",
   "license": "MIT",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
     "deploy": "deploy.sh"
   },
   "dependencies": {

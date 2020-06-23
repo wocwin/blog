@@ -1,6 +1,6 @@
 module.exports = {
-    title: 'BaseComponents',
-    description: '基础组件简介',
+    title: 'wocwin',
+    description: '个人技术文档',
     base: '/blog/',
     port: 2222,
     // dest: './dist',   // 设置输出目录
@@ -17,9 +17,21 @@ module.exports = {
         repoLabel: 'GitHub',
         nav: [
             { text: '主页', link: '/' },
-            { text: '组件', link: '/baseComponents/TTable/base' }
+            { text: '实际项目问题', link: '/projectProblem/permission' },
+            { text: '基础组件', link: '/baseComponents/TTable/base' }
         ],
         sidebar: {
+            '/projectProblem/': [
+                {
+                    title: 'Vue项目',
+                    collapsable: false,
+                    children: [
+                        'permission',
+                        'keepAlive',
+                        'axios'
+                    ]
+                }
+            ],
             '/baseComponents/': [
                 {
                     title: '常用组件',
