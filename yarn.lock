@@ -781,11 +781,6 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
-lodash.debounce@^4.0.8:
-  version "4.0.8"
-  resolved "https://registry.npm.taobao.org/lodash.debounce/download/lodash.debounce-4.0.8.tgz?cache=0&sync_timestamp=1571657605147&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash.debounce%2Fdownload%2Flodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
-  integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
-
 lodash@^4.0.0, lodash@^4.17.15, lodash@~4.17.10:
   version "4.17.15"
   resolved "https://registry.npm.taobao.org/lodash/download/lodash-4.17.15.tgz?cache=0&sync_timestamp=1571657272199&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Flodash%2Fdownload%2Flodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
@@ -963,13 +958,6 @@ once@^1.3.0:
   integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
   dependencies:
     wrappy "1"
-
-openteam-postinstall@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/openteam-postinstall/download/openteam-postinstall-1.0.2.tgz#c31e98eda2c787caa8ce2b3572d665eb08cc9916"
-  integrity sha1-wx6Y7aLHh8qozis1ctZl6wjMmRY=
-  dependencies:
-    lodash "^4.17.15"
 
 os-homedir@^1.0.0:
   version "1.0.2"
@@ -1556,14 +1544,6 @@ vue@^2.6.10:
   version "2.6.11"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
   integrity sha1-dllNh31LEiNEBuhONSdcbVFBJcU=
-
-vuepress-plugin-gotop-plus@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npm.taobao.org/vuepress-plugin-gotop-plus/download/vuepress-plugin-gotop-plus-1.0.4.tgz#07e42414a2c42cc28c651cce4d1190b11e5c6fe1"
-  integrity sha1-B+QkFKLELMKMZRzOTRGQsR5cb+E=
-  dependencies:
-    lodash.debounce "^4.0.8"
-    openteam-postinstall "^1.0.2"
 
 which-module@^2.0.0:
   version "2.0.0"

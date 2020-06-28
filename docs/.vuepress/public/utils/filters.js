@@ -7,23 +7,66 @@ import GlobalConstant from './constants.js' // 静态字典
  * @param {number} n 保留小数位
  */
 export function currencyFilter (num, n) {
-    const reg = /((^[1-9]\d*)|^0)(\.\d+)?$/
-    if (!reg.test(num)) {
-        return ''
-    } else {
-        n = n > 0 && n <= 20 ? n : 2
-        if (num || num === 0) {
-            num = parseFloat((num + '').replace(/^\d\.-/g, '')).toFixed(n) + ''
-            const l = num.split('.')[0].split('').reverse()
-            const r = num.split('.')[1]
-            let t = ''
-            for (let i = 0; i < l.length; i++) {
-                t += l[i] + ((i + 1) % 3 === 0 && (i + 1) !== l.length ? ',' : '')
+    n = n > 0 && n <= 20 ? n : 2
+    if (num || num === 0) {
+        num = parseFloat((num + '').replace(/^\d\.-/g, '')).toFixed(n) + ''
+        let l = ''
+        let r = ''
+        let y = false
+        if (num.indexOf('-') !== -1) {
+            l = num.split('-')[1].split('.')[0].split('').reverse()
+            r = num.split('-')[1].split('.')[1]
+            if (num.split('-')[0] === '') {
+                y = true
             }
-            return num ? ('￥ ' + t.split('').reverse().join('') + '.' + r) : ''
         } else {
-            return ''
+            l = num.split('.')[0].split('').reverse()
+            r = num.split('.')[1]
         }
+        let t = ''
+        for (let i = 0; i < l.length; i++) {
+            t += l[i] + ((i + 1) % 3 === 0 && (i + 1) !== l.length ? ',' : '')
+        }
+        return num ? (y ? ('￥ -' + t.split('').reverse().join('') + '.' + r) : ('￥ ' + t.split('').reverse().join('') + '.' + r)) : ''
+    } else {
+        return ''
+    }
+}
+/**
+ * 数字金额格式过滤(转汉字大写) 12000.34 => "壹万贰千叁角肆分"
+ * @param {number} num 被转换数字
+ */
+export function digitUppercase (num) {
+    const reg = /((^[1-9]\d*)|^0)(\.\d{0,2}){0,1}$/
+    if (!reg.test(num)) {
+        return '请输入正确的金额格式'
+    } else {
+        let fraction = ['角', '分']
+        let digit = [
+            '零', '壹', '贰', '叁', '肆',
+            '伍', '陆', '柒', '捌', '玖'
+        ]
+        let unit = [
+            ['元', '万', '亿', '兆'],
+            ['', '拾', '佰', '仟']
+        ]
+        let head = num < 0 ? '欠' : ''
+        num = Math.abs(num)
+        let s = ''
+        fraction.forEach((item, index) => {
+            s += (digit[Math.floor(num * 10 * Math.pow(10, index)) % 10] + item).replace(/零./, '')
+        })
+        s = s || '整'
+        num = Math.floor(num)
+        for (let i = 0; i < unit[0].length && num > 0; i++) {
+            let p = ''
+            for (let j = 0; j < unit[1].length && num > 0; j++) {
+                p = digit[num % 10] + unit[1][j] + p
+                num = Math.floor(num / 10)
+            }
+            s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s
+        }
+        return head + s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整')
     }
 }
 

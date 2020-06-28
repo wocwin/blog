@@ -1,6 +1,33 @@
 <template>
   <div class="t-input">
+    <el-tooltip
+      :disabled="!value"
+      placement="bottom-start"
+      effect="light"
+      popper-class="text-danger text-bold tooltip-custom"
+      v-if="isTip"
+    >
+      <div slot="content">
+        {{value | currencyFilter}}
+        <br />
+        {{value | digitUppercase}}
+      </div>
+      <el-input
+        type="text"
+        :placeholder="placeholder"
+        clearable
+        @blur="projectAmounts"
+        @clear="clearValue"
+        :value="currentVal"
+        @input="value=>$emit('input',value)"
+        v-bind="$attrs"
+        v-on="$listeners"
+      >
+        <template v-if="isShow" slot="append">{{appendTitle}}</template>
+      </el-input>
+    </el-tooltip>
     <el-input
+      v-else
       type="text"
       :placeholder="placeholder"
       clearable
@@ -24,9 +51,10 @@ export default {
     }
   },
   props: {
-    // searchValue: {
-    //   type: [String, Number]
-    // },
+    isTip: { // 是否显示金额提示信息
+      type: Boolean,
+      default: false
+    },
     value: {
       type: String
     },

@@ -18,7 +18,7 @@ module.exports = {
         nav: [
             { text: '主页', link: '/' },
             { text: '实际项目问题', link: '/projectProblem/permission' },
-            { text: '基础组件', link: '/baseComponents/TTable/base' }
+            { text: '基础组件', link: '/baseComponents/TInput/base' }
         ],
         sidebar: {
             '/projectProblem/': [
@@ -70,10 +70,15 @@ module.exports = {
         },
         plugins: [
             // ['@vuepress/plugins-back-to-top', false],
-            ['vuepress-plugin-gotop-plus', {
-                // mobileShow: false,
-                threshold: 150
-            }]
+            // ['vuepress-plugin-gotop-plus', {
+            //     // mobileShow: false,
+            //     threshold: 150
+            // }],
+            // ['vuepress-plugin-code-copy', {
+            //     align: 'top',
+            //     successText: '复制'
+            // }],
+            // ['@vuepress/back-to-top']
         ]
     }
 }
