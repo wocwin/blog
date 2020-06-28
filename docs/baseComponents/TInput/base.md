@@ -8,6 +8,8 @@
         <div class="t-input" style="min-height:100px;width:100%;padding:10px;">
           <div>默认方式显示金额</div>
           <t-input placeholder="请输入金额" @numblur="blurVal" v-model="money"></t-input>
+          <div>是否显示金额tip（大写）控制isTip属性</div>
+          <t-input placeholder="请输入金额" isTip v-model="money2"></t-input>
           <div>显示天数</div>
           <t-input placeholder="请输入天数" inputType="days" appendTitle="天" @numblur="blurVal1" v-model="day"></t-input>
           <div>显示电话号码</div>
@@ -25,6 +27,7 @@
              data () {
               return {
                   money: null,
+                  money2: null,
                   day: null,
                   tel: ''
               }
