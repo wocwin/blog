@@ -68,7 +68,7 @@
       <slot name="begin"></slot>
 
       <el-table-column
-        v-for="(item, index) in table.column"
+        v-for="(item, index) in columnList"
         :key="index"
         :type="item.type"
         :label="item.label"
@@ -76,7 +76,7 @@
         :min-width="item['min-width'] || item.minWidth || item.width"
         :sortable="item.sort"
         :align="item.align || 'center'"
-        show-overflow-tooltip
+        :show-overflow-tooltip="!item.noShowTip"
         v-bind="$attrs"
         v-on="$listeners"
       >
@@ -177,6 +177,11 @@ export default {
     }
   },
   computed: {
+    columnList () {
+      return this.table.column.filter(item => {
+        return !item.noShowColumn
+      })
+    },
     getToolbarBtn () {
       return this.table.toolbar ? this.table.toolbar.slice(0, 3) : []
     },
@@ -290,7 +295,7 @@ export default {
   .el-table .cell {
     padding: 0 5px;
   }
- 
+
   .el-table--scrollable-y .el-table__fixed-right {
     right: 8px !important;
   }
