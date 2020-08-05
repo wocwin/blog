@@ -5,8 +5,7 @@
       placement="bottom-start"
       effect="light"
       popper-class="text-danger text-bold tooltip-custom"
-      v-if="isTip"
-    >
+      v-if="isTip">
       <div slot="content">
         {{value | currencyFilter}}
         <br />
